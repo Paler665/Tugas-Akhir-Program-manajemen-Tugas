@@ -13,7 +13,7 @@ def show_splash(username):
     splash_label = tk.Label(splash_root, font=("Helvetica", 24, "bold"), fg="white", bg="#2e3f4f")
     splash_label.pack(expand=True)
 
-    # Function to display text one character at a time
+    # Fungsi biar huruf usernamenya keluar satu-satu
     def display_text(text):
         for char in text:
             splash_label.config(text=splash_label.cget("text") + char)
@@ -26,7 +26,7 @@ def show_splash(username):
     # Set a timer to destroy splash screen and show main app
     splash_root.after(3000, lambda: [splash_root.destroy(), main_app()])
 
-    # Run the splash screen event loop
+    # jalanin splash screennya
     splash_root.mainloop()
 
 def show_login():
@@ -58,11 +58,11 @@ def show_login():
     login_window.mainloop()
 
 def login(login_window, username):
-    if username:  # Check if username is not empty
+    if username == "Manajer 1":  
         login_window.destroy()
         show_splash(username)
     else:
-        messagebox.showerror("Login Failed", "Username cannot be empty")
+        messagebox.showerror("Username salah", "mohon coba lagi dengan username yang benar")
 
 def main_app():
     root = tk.Tk()
